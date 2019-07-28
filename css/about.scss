@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+@import "../fonts/font-awesome/scss/fontawesome.scss";
+@import "../fonts/font-awesome/scss/regular.scss";
+@import "../fonts/font-awesome/scss/brands.scss";
+
+.fa {
+    display: inline-block;
+    font: normal normal normal .875rem/1 FontAwesome;
+    font-size: inherit;
+    text-rendering:auto;
+
+}
+
+body, html {
+    height: 100vh;
+    font-family: 'Montserrat';
+    max-height: 500px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(27,27,27);
+
+   
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: rgba(32, 32, 32, .98);
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+
+    .logo {
+        color: #fff;
+        width: 40px;
+        height: 50px;
+        line-height: 65px;
+        float: left;
+        font-weight: bold;
+    }
+
+
+}
+
+header nav {
+    float: right;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    a {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+header nav ul li a:hover {
+
+    color: #fff;
+    background: rgb(160, 12, 49);
+
+}
+header nav ul li a.active
+{
+    color: rgb(32, 141, 204);
+}
+
+header nav ul li a.active:hover {
+    color: white;
+}
+
+.menu-toggle {
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+
+@media (max-width: 991px)
+{
+    header
+    {
+        padding: 0 20px;
+    }
+
+    .menu-toggle
+    {
+        display: block;
+    }
+    header nav
+    {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background: rgb(51, 51, 51);
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+
+        ul {
+            display: block;
+            text-align: center;
+
+        p {
+            color: #7a7a7a;
+            font-weight: 600;
+            border-bottom: solid 1px rgba(255, 255, 255, .5);
+            padding: 0 0 1em;
+            letter-spacing: 2px;
+        }
+
+            li a {
+                padding: 1em 0 1em;
+            }
+        }
+
+    }
+
+    header nav.active {
+        left: 0;
+    }
+}
+
+@media (min-width: 992px)
+{
+    header {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    header nav ul li p {
+        display: none;
+    }
+
+    header nav {
+        padding-left: 5em;
+    }
+
+    header nav ul li a {
+        border-right: solid 10px #1a1a1a;
+        background-color: rgb(32, 32, 32);
+    }
+}
+
+
+.bio-container {
+
+    margin: auto;
+    width: 1087px;
+    background: #042244;
+    display: flex;
+    box-shadow: 10px 10px 10px 10px black;
+    @media (max-width: 768px) {
+        width: 100%;
+        display: block;
+    }
+
+    .profile-image {
+
+        height: 455px;
+        width: 306px;
+        padding: 1em 2em 0em;
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        img {
+
+            border-top: solid 3px #a00c31;
+            border-left: solid 3px rgb(255, 246, 217);
+            border-right: solid 3px rgb(35, 135, 202);
+            border-bottom: solid 3px white;
+
+        }
+
+    }
+
+    .info-container {
+        margin: auto;
+        display: block;
+        width: 306px;
+        color: black;
+        background: rgb(241, 237, 237);
+        @media(max-width: 762px) {
+            display: none;
+        }
+
+        ul {
+            list-style-type: none;
+            border: solid 3px #a00c31;
+            padding: 0;
+            text-align: center;
+
+            li {
+
+                padding-bottom: 1em;
+
+                h1 {
+                    padding-top: .5em;
+                }
+                
+
+            }
+        }
+    }
+
+    .bottom-image {
+        margin: auto;
+        display: block;
+        background: rgb(73, 131, 170);
+        height: 325px;
+        width: 306px;
+        background-image: url(/images/byron_camera.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-top: solid 3px #a00c31;
+            border-left: solid 3px rgb(255, 246, 217);
+            border-right: solid 3px rgb(35, 135, 202);
+            border-bottom: solid 3px white;
+            @media(max-width: 762px) {
+                display: none;
+            }
+    }
+
+    .bio-text {
+
+        color: white;
+        padding-right: 2em;
+        @media(max-width: 762px) {
+            width: 100%;
+            padding: 0;
+        }
+
+        img {
+            width: 30%;
+            padding: 0 15px 0 0;
+            float: left;
+            @media(min-width: 762px) {
+                display: none;
+            }
+            @media(max-width: 600px ) {
+                display: none;
+            }
+            
+        }
+        
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: #a00c31;
+            border: solid 2px rgb(212, 212, 212);
+            padding: .5em .5em;
+            @media(max-width: 762px) {
+                margin: 0;
+               
+            }
+            
+        }
+
+        p {
+            text-align: left;
+            color: black;
+           background: rgb(255, 246, 217);
+           padding: 2em 2em;
+           @media(max-width: 762px) {
+            margin: 0;
+        }
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            background: #a00c31;
+            padding: 1em 1em;
+            border: solid 2px rgb(212, 212, 212);
+            @media(max-width: 762px) {
+                margin: 0;
+            }
+        }
+
+    }
+
+}
+
+footer.footer {
+    padding: 0 0 1em;
+    text-align: center;
+    background: rgb(241, 237, 237);
+    max-width: 1081px;
+    margin: auto;
+    display: block;
+
+    .footer-social {
+
+        .footer-social_item {
+            color: black;
+            font-size: 2em;
+            display: inline-block;
+            padding: 1em .3125em;
+        }
+    }
+
+    .footer-logo {
+        display: inline-block;
+        justify-content: center;
+        width: 5em;
+        padding: 1em 0 1em;
+    }
+}
